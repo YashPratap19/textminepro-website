@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Navigation from './components/navigation';
+import AnimatedBackground from './components/AnimatedBackground'; 
+// Ensure this file exists and has a negative z-index so it's behind your content.
+
 import {
   FileText,
   BarChart2,
@@ -6,64 +10,50 @@ import {
   Clock,
   RefreshCw,
   MessageSquare,
-  Linkedin // <-- Import the Linkedin icon from lucide-react
+  Linkedin
 } from 'lucide-react';
 
-// Use a relative import for your Card components
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from './components/ui/card';
 
-const Navigation = () => (
-  <nav className="fixed top-0 w-full bg-gray-900 border-b border-gray-800 z-50">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-      <div className="flex items-center">
-        <img
-          src="https://i.ibb.co/00dtWXR/image-removebg-preview-14.png"
-          alt="TextMine Pro Logo"
-          className="h-10 w-10 mr-2"
-        />
-        <span className="text-xl font-bold text-blue-500">TextMine Pro</span>
-      </div>
-      <div className="flex items-center space-x-8">
-        <a href="#home" className="text-gray-300 hover:text-white">Home</a>
-        <a href="#features" className="text-gray-300 hover:text-white">Features</a>
-        <a href="#about" className="text-gray-300 hover:text-white">About</a>
-        <a href="#download" className="text-gray-300 hover:text-white">Download</a>
-        <a href="#contact" className="text-gray-300 hover:text-white">Contact</a>
-        <a href="#creators" className="text-gray-300 hover:text-white">Meet the Creators</a>
-      </div>
-    </div>
-  </nav>
-);
-
+// ====================== Hero Section ======================
 const Hero = () => (
-  <div id="home" className="pt-24 pb-16 bg-gray-900">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 className="text-4xl font-bold text-white mb-6">
-        TextMine Pro<br />
-        <span className="text-blue-500">For Researchers Only</span>
-      </h1>
-      <p className="text-xl text-gray-400 mb-8">
-        Analyze hundreds of documents quickly. Process large annual reports, normalize keyword counts, and gain interactive insights.
-      </p>
-      <div className="flex justify-center">
+  <div id="home" className="pt-24 pb-16 relative z-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-8">
+      {/* Left column */}
+      <div className="md:w-1/2 text-center md:text-left">
+        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          TextMine Pro<br />
+          <span className="text-blue-500">For Researchers Only</span>
+        </h1>
+        <p className="text-xl text-gray-400 mb-8">
+          Analyze hundreds of documents quickly. Process large annual reports, normalize keyword counts, and gain interactive insights.
+        </p>
         <a
           href="https://www.dropbox.com/scl/fo/1kwzrcu8wbmu5vf9saef4/AP5zCxYKkK3N3291IKogUgM?rlkey=n2jgp1rcbn5indnq1iuzemdof&st=p2dwbq5d&dl=0"
-          className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition flex items-center"
+          className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition inline-flex items-center"
         >
           <Download className="mr-2 h-5 w-5" />
           Download Now
         </a>
       </div>
+      {/* Right column: screenshot */}
+      <div className="md:w-1/2 flex justify-center">
+        <img
+          src="https://i.ibb.co/h19FnRT5/Screenshot-2025-02-14-023420.png"
+          alt="App Screenshot"
+          className="rounded-lg shadow-lg max-w-full"
+        />
+      </div>
     </div>
   </div>
 );
 
+// ====================== Features Section ======================
 const Features = () => (
   <div id="features" className="py-16 bg-gray-800">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,12 +110,13 @@ const FeatureCard = ({ icon, title, description }) => (
   </Card>
 );
 
+// ====================== About Section ======================
 const About = () => (
   <div id="about" className="py-16 bg-gray-900">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 className="text-3xl font-bold text-white mb-4">Our Story</h2>
       <p className="text-gray-400 max-w-3xl mx-auto mb-8">
-        TextMine Pro was born out of our own research struggles. We needed a tool that could process multiple PDFs—each 400-500 pages long—across many annual reports quickly and accurately. Traditional methods (like Chrome indexing) could take 6-7 hours and still be inaccurate, and no online tool or GPT solution existed for processing gigabytes of data. In our research, we had to quantify qualitative information (e.g. building an uncertainty index based on keyword frequency) and nothing on the market could handle it. Check out this Reddit thread for context: <a href="https://www.reddit.com/r/AskAcademia/s/tUIjtGDUDZ" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">r/AskAcademia</a>.
+        TextMine Pro was born out of our own research struggles. We needed a tool that could process multiple PDFs—each 400-500 pages long—across many annual reports quickly and accurately...
       </p>
       <div className="bg-gray-800 rounded-lg p-8 text-left max-w-3xl mx-auto">
         <p className="text-gray-400">
@@ -136,6 +127,7 @@ const About = () => (
   </div>
 );
 
+// ====================== Download Section ======================
 const DownloadSection = () => (
   <div id="download" className="py-16 bg-gray-800">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -154,6 +146,7 @@ const DownloadSection = () => (
   </div>
 );
 
+// ====================== Contact Section ======================
 const Contact = () => (
   <div id="contact" className="py-16 bg-gray-900">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -164,11 +157,11 @@ const Contact = () => (
       <div className="max-w-xl mx-auto">
         <div className="bg-gray-800 rounded-lg p-8">
           <p className="text-gray-300 mb-2">
-            <span className="mr-2">📧</span> 
+            <span className="mr-2">📧</span>
             <a href="mailto:marshallbt123@gmail.com" className="hover:underline">marshallbt123@gmail.com</a>
           </p>
           <p className="text-gray-300">
-            <span className="mr-2">📝</span> 
+            <span className="mr-2">📝</span>
             <a href="https://forms.gle/97onA8Ztm9e4YBco7" target="_blank" rel="noopener noreferrer" className="hover:underline">Give Feedback</a>
           </p>
         </div>
@@ -177,6 +170,7 @@ const Contact = () => (
   </div>
 );
 
+// ====================== Creators Section ======================
 const Creators = () => (
   <div id="creators" className="py-16 bg-gray-900">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -225,6 +219,7 @@ const CreatorCard = ({ name, photo, linkedin }) => (
   </Card>
 );
 
+// ====================== Footer ======================
 const Footer = () => (
   <footer className="bg-gray-900 border-t border-gray-800">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col items-center space-y-2">
@@ -235,10 +230,16 @@ const Footer = () => (
   </footer>
 );
 
+// ====================== Main App ======================
 const App = () => {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-900 relative">
+      {/* Animated Background behind everything */}
+      <AnimatedBackground />
+
+      {/* Navigation (Hamburger + Desktop) */}
       <Navigation />
+
       <main>
         <Hero />
         <Features />
@@ -247,6 +248,7 @@ const App = () => {
         <Contact />
         <Creators />
       </main>
+
       <Footer />
     </div>
   );
