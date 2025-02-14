@@ -183,14 +183,14 @@ const Creators = () => (
       <h2 className="text-3xl font-bold text-white mb-8 text-center">Meet the Creators</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <CreatorCard
-          name="Karan Rana"
-          photo="https://via.placeholder.com/150?text=Karan"
-          linkedin="https://in.linkedin.com/in/karan-rana-540594218"
+          name="Yash Pratap"
+          photo="https://i.ibb.co/xSkFLF7y/1737737520024.jpg"
+          linkedin="https://in.linkedin.com/in/yashpratap19"
         />
         <CreatorCard
-          name="Yash Pratap"
-          photo="https://via.placeholder.com/150?text=Yash"
-          linkedin="https://in.linkedin.com/in/yashpratap19"
+          name="Karan Rana"
+          photo="https://i.ibb.co/FqY2qJVS/1727680585130.jpg"
+          linkedin="https://in.linkedin.com/in/karan-rana-540594218"
         />
       </div>
     </div>
