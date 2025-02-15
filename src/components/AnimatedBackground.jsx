@@ -4,17 +4,19 @@ import { loadFull } from 'tsparticles';
 
 const AnimatedBackground = () => {
   const particlesInit = async (main) => {
-    // Loads the full tsparticles package bundle
     await loadFull(main);
   };
+
+  const particlesLoaded = (container) => {};
 
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
+      loaded={particlesLoaded}
       options={{
         background: {
-          color: { value: "#1a202c" } // dark background
+          color: { value: "#1a202c" },
         },
         fpsLimit: 60,
         interactivity: {
