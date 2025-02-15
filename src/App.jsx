@@ -33,7 +33,7 @@ const Hero = () => (
       <div className="md:w-1/2 text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
           TextMine Pro<br />
-          <span className="text-blue-500">For Researchers Only</span>
+          <span className="text-blue-500">For Researchers</span>
         </h1>
         <p className="text-xl text-gray-400 mb-8">
           Analyze hundreds of documents quickly. Process large annual reports, normalize keyword counts, and gain interactive insights.
