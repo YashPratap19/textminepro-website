@@ -41,6 +41,12 @@ const Hero = () => (
         <a
           href="https://www.dropbox.com/scl/fo/1kwzrcu8wbmu5vf9saef4/AP5zCxYKkK3N3291IKogUgM?rlkey=n2jgp1rcbn5indnq1iuzemdof&st=p2dwbq5d&dl=0"
           className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition inline-flex items-center"
+          onClick={() => {
+            window.gtag('event', 'download', {
+              event_category: 'Button Click',
+              event_label: 'Download Button'
+            });
+          }}
         >
           <Download className="mr-2 h-5 w-5" />
           Download Now
