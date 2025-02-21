@@ -186,9 +186,16 @@ const WhyTextMinePro = () => (
               <p className="text-gray-300">Join researchers worldwide who've switched to TextMine Pro</p>
             </div>
           </div>
-          <button className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-300 shadow-lg">
+          {/* Download Button */}
+          <a
+            href="https://www.dropbox.com/scl/fo/1kwzrcu8wbmu5vf9saef4/AP5zCxYKkK3N3291IKogUgM?rlkey=n2jgp1rcbn5indnq1iuzemdof&st=p2dwbq5d&dl=0"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-300 shadow-lg"
+          >
             Download Now
-          </button>
+          </a>
           <div className="flex items-center justify-center text-gray-400">
             <AlertCircle className="w-5 h-5 mr-2" />
             <span className="text-sm">
@@ -198,7 +205,7 @@ const WhyTextMinePro = () => (
         </div>
       </div>
     </div>
-  </div>
+  </div>        
   
 );
 
